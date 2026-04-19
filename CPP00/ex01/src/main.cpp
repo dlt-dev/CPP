@@ -6,77 +6,65 @@
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 17:53:51 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/03/13 15:10:42 by jdelattr         ###   ########.fr       */
+/*   Updated: 2026/04/19 17:29:18 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstdlib>
+
 #include "PhoneBook.hpp"
 
-
-void	add()//
+typedef enum e_cmd
 {
-	//irst name
-	//last name
-	//nickname
-	//phone number
-	//rkest secret
+	CMD_EXIT, // 0
+	CMD_ADD, // 1
+	CMD_SEARCH, // 2
+}	t_cmd;
 
-	//
-	//si le conntact n'est pas complet -> exit + prompte
-	//une fois all th efields -> enregistrer l econtact
-
-}
-
-void	search()
+static t_cmd getCmd(void)
 {
-
-}
-
-int	main(int ac, char **av)
-{
-	PhoneBook	book;
-	
-	if (ac == 1)
-			return (0);
-
-	std::string	arg = av[1];
-	
-	
-	//Contact	;
-	while (true)
+	std::string input;
+	int attemps = 0;
+	while (attemps < 3)
 	{
-		if (!arg.compare("ADD")){
-			std::cout << "ADD" << std::endl;
-			//add();
+		std::cout << "Enter your instruction - ADD | SEARCH | EXIT : ";
+		std::getline(std::cin, input);
+		
+		if (input == "add" || input == "ADD")
+			return (CMD_ADD);
+		else if (input == "search" || input == "SEARCH")
+			return (CMD_SEARCH);
+		else if (input == "exit" || input == "EXIT")
+		{
+			std::cout << "Exiting the program." << std::endl;
+			std::exit(EXIT_SUCCESS);
 		}
-		else if (!arg.compare("SEARCH")){
-			std::cout << "SEARCH" << std::endl;
-			//search();
-		}
-		else if (!arg.compare("EXIT")){
-			std::cout << "EXIT" << std::endl;
-			break ;
+		else
+		{
+			std::cout << "Invalid command. Please enter ADD, SEARCH, or EXIT." << std::endl;
+			attemps++;
 		}
 	}
-	return (0);
-	
+	std::cout << "Maximum attempts reached. Exiting the program." << std::endl;
+	std::exit(EXIT_FAILURE);
 }
 
-/* 	while (true)
+
+int main(void)
+{
+	PhoneBook	phoneBook;
+	t_cmd		cmd;
+
+
+	std::cout << "Welcome !" << std::endl;
+	while (true) 
 	{
-		if (!arg.compare("ADD")){
-			std::cout << "ADD" << std::endl;
-			//add();
-		}
-		else if (!arg.compare("SEARCH")){
-			std::cout << "SEARCH" << std::endl;
-			//search();
-		}
-		else if (!arg.compare("EXIT")){
-			std::cout << "EXIT" << std::endl;
-			break ;
-		}
+		cmd = getCmd();
+		if (cmd == CMD_ADD)
+			phoneBook.add();
+		else if (cmd == CMD_SEARCH)
+			phoneBook.search();
 	}
-	return (0); */
-	
+	return 0;
+}

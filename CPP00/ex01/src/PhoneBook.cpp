@@ -6,7 +6,7 @@
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 17:06:55 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/03/05 16:48:26 by jdelattr         ###   ########.fr       */
+/*   Updated: 2026/04/19 17:09:15 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ PhoneBook::~PhoneBook()
 }
 
 void	PhoneBook::add()
+{
+	std::cout << "adding smth" << std::endl;
+}
+
+void	PhoneBook::search()
 {
 	std::cout << "adding smth" << std::endl;
 }
