@@ -6,13 +6,24 @@
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 15:39:34 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/03/13 14:53:39 by jdelattr         ###   ########.fr       */
+/*   Updated: 2026/04/20 18:35:47 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <string>
+
+	enum e_field
+	{
+		FIELD_FIRST_NAME = 0,
+		FIELD_LAST_NAME,
+		FIELD_NICKNAME,
+		FIELD_PHONE_NUMBER,
+		FIELD_DARKEST_SECRET,
+		FIELD_INDEX,
+		FIELD_COUNT
+	};
 
 class Contact
 {
@@ -24,8 +35,12 @@ class Contact
 		std::string	_darkestSecret;
 	
 	public:
+	
 		Contact();
 		~Contact();
+		std::string getField(int f) const;
+		void		setField(int f, const std::string &value);
+		
 };
 
 
