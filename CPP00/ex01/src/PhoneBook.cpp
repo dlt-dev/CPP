@@ -6,7 +6,7 @@
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 17:06:55 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/04/20 20:21:14 by jdelattr         ###   ########.fr       */
+/*   Updated: 2026/04/25 12:10:37 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,15 @@ void	PhoneBook::add()
 {
 	std::string value;
 
+	if (this->_index == 8)
+	{
+		std::cout << "\033[32mThe PhoneBook is full and adding your new contact will delet your firt one.\033[0m" << std::endl;
+		this->_index = 0;
+	}
+
+	std::cout << "Index of the new contact : ";
+	std::cout << this->_index << std::endl;
+
 	if (!read_non_empty_line("First name : ", value))
 		return ;
 	this->_contacts[this->_index].setField(FIELD_FIRST_NAME, value);
@@ -61,15 +70,19 @@ void	PhoneBook::add()
 		return ;
 	this->_contacts[this->_index].setField(FIELD_DARKEST_SECRET, value);
 	std::cout << "\033[32mContact added to the PhoneBook !\033[0m" << std::endl;
-	if (this->_count < MAX_CONTACTS)
+
+	if (this->_count < 8)
+	{
 		this->_count++;
-	this->_index = (this->_index + 1) % MAX_CONTACTS;
+	}
+	this->_index++;
+
 }
 
 static std::string	format_column(const std::string &value)
 {
 	if (value.length() > 10)
-		return (value.substr(0, 9) + ".");// si la taille depasse 10 le 10e char = .
+		return (value.substr(0, 9) + "."); // si la taille depasse 10 le 10e char = .
 	return (value);
 }
 
@@ -83,7 +96,7 @@ void	PhoneBook::search()
 	i = 0;
 	if (this->_count == 0)
 	{
-		std::cout << "\033[31mSorry, you have no friends\033[0m" << std::endl;
+		std::cout << "\033[31mSorry, you have no friends ...\033[0m" << std::endl;
 		return ;
 	}
 	while (i < this->_count)
