@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/10 11:13:25 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/05/17 17:40:55 by jdelattr         ###   ########.fr       */
+/*   Created: 2026/05/29 13:05:37 by jdelattr          #+#    #+#             */
+/*   Updated: 2026/05/30 18:58:30 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include "Weapon.hpp"
 #include <iostream>
+#include <bitset>
+#include "Fixed.hpp"
 
-Weapon::Weapon(std::string type) : type(type)
+int main( void ) 
 {
-    return ;
-}
-
-Weapon::~Weapon(void)
-{
-    return ;
-}
-
-std::string Weapon::getType(void) const
-{
-    return (type);
-}
-
-void Weapon::setType(std::string type)
-{
-    std::cout << "Weapon name change for " 
-            << this->type 
-            << " to " 
-            << type << std::endl;
-            
-    this->type = type;
+    Fixed a;
+    Fixed b( a );
+    Fixed c;
+    c = b;
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
+    return 0;
 }
