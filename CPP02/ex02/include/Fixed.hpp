@@ -6,7 +6,7 @@
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 13:07:21 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/05/31 22:26:48 by jdelattr         ###   ########.fr       */
+/*   Updated: 2026/06/01 13:38:41 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class Fixed
 {
     private:
-        int FixedValue;
+        int fixedValue;
         static const int fractBitsNum = 8;
     
 
