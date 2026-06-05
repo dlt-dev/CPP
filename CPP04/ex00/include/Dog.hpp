@@ -1,37 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/01 15:19:13 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/06/05 16:44:15 by jdelattr         ###   ########.fr       */
+/*   Created: 2026/06/05 18:23:40 by jdelattr          #+#    #+#             */
+/*   Updated: 2026/06/05 18:28:06 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
 #include <iostream>
 #include <string>
+#include "Dog.hpp"
+#include "Dog.hpp"
+#include "Animal.hpp"
 
-class ClapTrap
+class Dog : public Animal
 {
-  private:
-    std::string Name;
-    unsigned int hitPoints;
-    unsigned int energyPoints;
-    int attackDamage;
+  protected:
+
     
   public:
 
-    ClapTrap(std::string name);
-    ~ClapTrap();
-    void attack(const std::string& target);
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
-  
+    Dog();
+    Dog(const Dog& other);
+    Dog& operator=(const Dog& other);
+    ~Dog();
+
+    void makeSound() const;
+
 };
 
 #endif
+
+Dog :: Dog()
+{
+    
+}
+
+Dog :: ~Dog()
+{
+    
+}
+
+void Dog :: makeSound() const
+{
+    std::cout << "**WOUF**" << std::endl;
+}

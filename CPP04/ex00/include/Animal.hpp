@@ -1,37 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/01 15:19:13 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/06/05 16:44:15 by jdelattr         ###   ########.fr       */
+/*   Created: 2026/06/05 17:21:42 by jdelattr          #+#    #+#             */
+/*   Updated: 2026/06/05 18:31:37 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 #include <iostream>
 #include <string>
 
-class ClapTrap
+class Animal
 {
-  private:
-    std::string Name;
-    unsigned int hitPoints;
-    unsigned int energyPoints;
-    int attackDamage;
+  protected:
+    //std::string Name;
+    std::string type;
     
   public:
 
-    ClapTrap(std::string name);
-    ~ClapTrap();
-    void attack(const std::string& target);
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
-  
+    Animal(std::string name);
+    ~Animal();
+
 };
 
 #endif
+
+Animal(std::string name)
+{
+    
+}
+
+~Animal()
+{
+    
+}
+
+void Animal::makeSound() const
+{
+    std::cout << "*animal sound*" << std::endl;
+}
