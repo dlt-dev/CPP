@@ -6,7 +6,7 @@
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 15:19:13 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/06/03 15:50:12 by jdelattr         ###   ########.fr       */
+/*   Updated: 2026/06/07 16:52:25 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class ClapTrap
     unsigned int hitPoints;
     unsigned int energyPoints;
     int attackDamage;
+    
     
   public:
 

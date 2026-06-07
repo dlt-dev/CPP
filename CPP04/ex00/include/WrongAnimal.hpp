@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/03 15:12:14 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/06/07 16:43:44 by jdelattr         ###   ########.fr       */
+/*   Created: 2026/06/07 19:06:17 by jdelattr          #+#    #+#             */
+/*   Updated: 2026/06/07 19:21:36 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 #include <iostream>
 #include <string>
-#include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class WrongAnimal
 {
-  private:
-  
+  protected:
+
+    std::string type;
     
   public:
 
-    ScavTrap(std::string name);
-    ~ScavTrap();
+    WrongAnimal();
+    WrongAnimal(const WrongAnimal& other);
+    WrongAnimal& operator=(const WrongAnimal& other);
+    WrongAnimal(const std::string& name);
+    ~WrongAnimal();
     
-    void attack(const std::string& target);
-    
-    void guardGate();
-  
+    void makeSound() const;
+    std::string getType() const;
 };
 
 #endif

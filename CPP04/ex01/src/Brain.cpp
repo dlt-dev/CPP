@@ -1,36 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/03 15:12:14 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/06/07 16:43:44 by jdelattr         ###   ########.fr       */
+/*   Created: 2026/06/07 19:49:57 by jdelattr          #+#    #+#             */
+/*   Updated: 2026/06/07 19:49:58 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-
-#include <iostream>
-#include <string>
-#include "ClapTrap.hpp"
-
-class ScavTrap : public ClapTrap
-{
-  private:
-  
-    
-  public:
-
-    ScavTrap(std::string name);
-    ~ScavTrap();
-    
-    void attack(const std::string& target);
-    
-    void guardGate();
-  
-};
-
-#endif

@@ -6,11 +6,11 @@
 #    By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/29 13:02:42 by jdelattr          #+#    #+#              #
-#    Updated: 2026/06/07 19:40:13 by jdelattr         ###   ########.fr        #
+#    Updated: 2026/06/07 19:50:12 by jdelattr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Polymorphism
+NAME = IdontWantToSetTheWorldOnFire
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -18,7 +18,7 @@ SRC_DIR = ./src/
 OBJ_DIR = ./objects/
 INC_DIR = ./include/
 
-SRC_FILES =	WrongAnimal.cpp WrongCat.cpp Cat.cpp Dog.cpp Animal.cpp main.cpp
+SRC_FILES =	Brain.cpp WrongAnimal.cpp WrongCat.cpp Cat.cpp Dog.cpp Animal.cpp main.cpp
 
 OBJ = $(addprefix $(OBJ_DIR), $(SRC_FILES:.cpp=.o))
 

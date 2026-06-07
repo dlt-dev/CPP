@@ -6,7 +6,7 @@
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 15:19:07 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/06/03 17:01:28 by jdelattr         ###   ########.fr       */
+/*   Updated: 2026/06/07 16:46:17 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
     ClapTrap c("lili");
 
     ScavTrap d("zoe");
-
+    ClapTrap* test = new ScavTrap("herode");
     d.attack("le chat");
     d.beRepaired(8);
     d.takeDamage(110);
@@ -52,7 +52,7 @@ int main()
 
     a.beRepaired(5);
     b.beRepaired(100);
-
+    delete test;
     return (0);
 }
 
