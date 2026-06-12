@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Aanimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 17:19:46 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/06/11 16:17:09 by jdelattr         ###   ########.fr       */
+/*   Updated: 2026/06/12 12:43:18 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Animal::Animal()
 {
   this->type = "default";
-  std::cout << "Default animal constructor called. " << std::endl;
+  std::cout << "Default Animal constructor called. " << std::endl;
 }
 
 Animal::Animal(const std::string& name)
@@ -24,7 +24,6 @@ Animal::Animal(const std::string& name)
    this->type = name;
    std::cout << "Animal constructor called. " << std::endl;
 }
-
 Animal::Animal(const Animal& other)
 {
   this->type = other.type;
@@ -43,12 +42,12 @@ Animal& Animal::operator=(const Animal& other)
 
 Animal::~Animal()
 {
-    std::cout << "Default animal destructor called. " << std::endl;
+    std::cout << "Default Animal destructor called. " << std::endl;
 }
 
 void Animal::makeSound() const
 {
-    std::cout << "*animal sound*" << std::endl;
+    std::cout << "*Animal sound*" << std::endl;
 }
 
 std::string Animal::getType() const

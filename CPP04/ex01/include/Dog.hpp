@@ -6,7 +6,7 @@
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 18:23:40 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/06/07 19:05:29 by jdelattr         ###   ########.fr       */
+/*   Updated: 2026/06/11 13:06:39 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,15 @@
 #include "Dog.hpp"
 #include "Dog.hpp"
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal
 {
-  protected:
+  
+  private:
 
-    
+  Brain *_brain;
+
   public:
 
     Dog();
@@ -32,9 +35,9 @@ class Dog : public Animal
     ~Dog();
 
     void makeSound() const;
+    void setIdea(int const index, const std::string &idea);
+    std::string getIdea(int const index) const;
 
 };
 
 #endif
-
-

@@ -6,11 +6,11 @@
 #    By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/29 13:02:42 by jdelattr          #+#    #+#              #
-#    Updated: 2026/06/11 17:57:28 by jdelattr         ###   ########.fr        #
+#    Updated: 2026/06/12 12:45:09 by jdelattr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = IdontWantToSetTheWorldOnFire
+NAME = AbstractClass
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 

@@ -6,7 +6,7 @@
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 19:06:17 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/06/07 19:21:36 by jdelattr         ###   ########.fr       */
+/*   Updated: 2026/06/11 16:25:14 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ class WrongAnimal
   public:
 
     WrongAnimal();
+    WrongAnimal(const std::string& name);
     WrongAnimal(const WrongAnimal& other);
     WrongAnimal& operator=(const WrongAnimal& other);
-    WrongAnimal(const std::string& name);
+    
     ~WrongAnimal();
     
     void makeSound() const;

@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/05 18:18:59 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/06/11 13:06:23 by jdelattr         ###   ########.fr       */
+/*   Created: 2026/06/05 18:23:40 by jdelattr          #+#    #+#             */
+/*   Updated: 2026/06/12 12:44:34 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
 #include <iostream>
 #include <string>
-#include "Cat.hpp"
+#include "Dog.hpp"
 #include "Dog.hpp"
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal
+class Dog : public Animal
 {
+  
   private:
 
   Brain *_brain;
 
   public:
 
-    Cat();
-    Cat(const Cat& other);
-    Cat& operator=(const Cat& other);
-    ~Cat();
+    Dog();
+    Dog(const Dog& other);
+    Dog& operator=(const Dog& other);
+    ~Dog();
 
     void makeSound() const;
     void setIdea(int const index, const std::string &idea);
@@ -40,5 +41,3 @@ class Cat : public Animal
 };
 
 #endif
-
-

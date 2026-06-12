@@ -1,44 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/05 18:18:59 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/06/11 13:06:23 by jdelattr         ###   ########.fr       */
+/*   Created: 2026/06/07 19:06:22 by jdelattr          #+#    #+#             */
+/*   Updated: 2026/06/07 19:39:28 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
 #include <iostream>
 #include <string>
-#include "Cat.hpp"
 #include "Dog.hpp"
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "WrongAnimal.hpp"
 
-class Cat : public Animal
+class WrongCat : public WrongAnimal
 {
-  private:
+  protected:
 
-  Brain *_brain;
-
+    
   public:
 
-    Cat();
-    Cat(const Cat& other);
-    Cat& operator=(const Cat& other);
-    ~Cat();
+    WrongCat();
+    WrongCat(const WrongCat& other);
+    WrongCat& operator=(const WrongCat& other);
+    ~WrongCat();
 
     void makeSound() const;
-    void setIdea(int const index, const std::string &idea);
-    std::string getIdea(int const index) const;
 
 };
 
 #endif
-
-
