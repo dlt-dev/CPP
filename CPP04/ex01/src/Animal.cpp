@@ -6,7 +6,7 @@
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 17:19:46 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/06/07 19:27:01 by jdelattr         ###   ########.fr       */
+/*   Updated: 2026/06/19 17:14:54 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Animal::Animal(const std::string& name)
    std::cout << "Animal constructor called. " << std::endl;
 }
 Animal::Animal(const Animal& other)
-{
+{   
   this->type = other.type;
   std::cout << "Animal copy constructor called. " << std::endl;
 }
