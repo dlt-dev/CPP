@@ -1,28 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/05 13:26:41 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/08/15 14:38:20 by jdelattr         ###   ########.fr       */
+/*   Created: 2026/07/28 12:47:36 by jdelattr          #+#    #+#             */
+/*   Updated: 2026/08/04 14:24:44 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef BASE_HPP
+# define BASE_HPP
 
-int main(int argc, char** argv)
+#include <iostream>
+#include <string>
+#include <exception>
+#include <cctype>
+
+#include <stdint.h>
+
+#include <iostream>
+#include <cmath>
+#include <limits>
+#include <cstdlib>
+
+class Base
 {
-    // detect the type of literal as parameter
-    // convert it from string to actual type
-    // convert it explicitly to the three other data types
-
-    if (argc != 2)
-        return 1;
-
-    ScalarConverter::convert(argv[1]);
-
-    return 0;
+    public:
+        virtual ~Base();
     
-}
+};
+
+
+class A : public Base
+{
+};
+
+class B : public Base
+{
+};
+
+class C : public Base
+{
+};
+
+#endif

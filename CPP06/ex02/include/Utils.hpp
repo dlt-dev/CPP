@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/05 13:26:41 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/08/15 14:38:20 by jdelattr         ###   ########.fr       */
+/*   Created: 2026/08/15 16:36:20 by jdelattr          #+#    #+#             */
+/*   Updated: 2026/08/15 16:37:26 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
 
-int main(int argc, char** argv)
-{
-    // detect the type of literal as parameter
-    // convert it from string to actual type
-    // convert it explicitly to the three other data types
+#ifndef UTILS_HPP
+# define UTILS_HPP
 
-    if (argc != 2)
-        return 1;
+#include <iostream>
+#include <string>
+#include <exception>
+#include <cctype>
 
-    ScalarConverter::convert(argv[1]);
+#include <stdint.h>
 
-    return 0;
-    
-}
+#include <iostream>
+#include <cmath>
+#include <limits>
+#include <cstdlib>
+
+#include "Base.hpp"
+
+Base* generate(void);
+
+void identify(Base* p);
+void identify(Base& p);
+
+#endif

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                  :+:      :+:    :+:   */
+/*   Serializer.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,47 +10,40 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-# define SCALARCONVERTER_HPP
+#ifndef SERIALIZER_HPP
+# define SERIALIZER_HPP
 
 #include <iostream>
 #include <string>
 #include <exception>
 #include <cctype>
 
+#include <stdint.h>
 
 #include <iostream>
 #include <cmath>
 #include <limits>
 #include <cstdlib>
 
-class ScalarConverter
+struct Data
+{
+    int id;
+    std::string name;
+};
+
+class Serializer
 {
     private:
     
-    ScalarConverter();//car non istanciable
-    ScalarConverter(const ScalarConverter& other);//
-    ScalarConverter& operator=(const ScalarConverter& other);//
-    ~ScalarConverter();//
-
-    enum Type
-    {
-        CHAR, 
-        INT,
-        FLOAT,
-        DOUBLE,
-        INVALID
-    };
-
-    static Type detectType(const std::string& literal);
-    static void asChar(double value);
-    static void asInt(double value);
-    static void asFloat(double value);
-    static void asDouble(double value);
+    Serializer();//car non istanciable
+    Serializer(const Serializer& other);//
+    Serializer& operator=(const Serializer& other);//
+    ~Serializer();//
     
     public:
     
-    static void convert(const std::string& literal);
+    static uintptr_t serialize(Data* ptr);
+    static Data* deserialize(uintptr_t raw);
     
 };
 

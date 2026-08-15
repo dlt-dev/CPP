@@ -6,7 +6,7 @@
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 12:47:39 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/08/05 19:08:46 by jdelattr         ###   ########.fr       */
+/*   Updated: 2026/08/15 15:37:08 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,26 @@
 #include <string>
 #include <iomanip>
 
+ScalarConverter::ScalarConverter() 
+{
+	
+}
+
+ScalarConverter::ScalarConverter(const ScalarConverter& other)
+{
+	(void)other;
+}
+
+ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other)
+{
+	(void)other;
+	return *this;
+}
+
+ScalarConverter::~ScalarConverter()
+{
+	
+}
 
 ScalarConverter::Type ScalarConverter::detectType(const std::string& literal)
 {
@@ -220,5 +240,4 @@ void ScalarConverter::convert(const std::string& literal)
 	asFloat(value);
 	asDouble(value);
 
-  
 }
