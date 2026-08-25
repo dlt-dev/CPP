@@ -6,7 +6,7 @@
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/16 19:02:51 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/08/24 16:15:42 by jdelattr         ###   ########.fr       */
+/*   Updated: 2026/08/19 16:49:31 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ int Span::longestSpan() const
 	int maxVal = *std::max_element(_numbers.begin(), _numbers.end());
 
 	return maxVal - minVal;
-
 }
 
 
