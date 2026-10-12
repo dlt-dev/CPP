@@ -6,71 +6,85 @@
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/16 18:15:44 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/08/19 20:34:45 by jdelattr         ###   ########.fr       */
+/*   Updated: 2026/09/25 17:58:38 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "MutantStack.hpp"
+#include <iostream>
+#include <vector>
+#include <utility>
+#include <algorithm>
+#include <cstdlib>
+#include <climits>
+#include "PmergeMe.hpp"
 
-int main()
+static bool isPositiveInteger(const char *value)
 {
+    std::string number(value);
 
-    // MutantStack<int> mstack;
-    // mstack.push(5);
-    // mstack.push(17);
-    // std::cout << mstack.top() << std::endl;
-    // mstack.pop();
-    // std::cout << mstack.size() << std::endl;
-    // mstack.push(3);
-    // mstack.push(5);
-    // mstack.push(737);
-    // //[...]
-    // mstack.push(0);
-    // MutantStack<int>::iterator it = mstack.begin();
-    // MutantStack<int>::iterator ite = mstack.end();
-    // ++it;
-    // --it;
-    // while (it != ite)
-    // {
-    // std::cout << *it << std::endl;
-    // ++it;
-    // }
-    // std::stack<int> s(mstack);
-    // return 0;
+    if (number.empty())
+        return false;
+    for (size_t i = 0; i < number.length(); ++i)
+    {
+        if (!std::isdigit(static_cast<unsigned char>(number[i])))
+            return false;
+    }
 
-    MutantStack<int> mstack;
+	if (number.length() > 10)
+		return false;
+	if (number.length() == 10 && number > "2147483647")
+		return false;
+	return true;
+}
 
-	mstack.push(5);
-	mstack.push(17);
 
-	std::cout << mstack.top() << std::endl;
 
-	mstack.pop();
+void printNumbers(const std::string& isWhat, const std::vector<int>& numbers)
+{
+	std::cout << isWhat << std::endl;
 
-	std::cout << mstack.size() << std::endl;
-
-	mstack.push(3);
-	mstack.push(5);
-	mstack.push(737);
-	mstack.push(0);
-
-	MutantStack<int>::iterator it = mstack.begin();
-	MutantStack<int>::iterator ite = mstack.end();
-
-	++it;
-	--it;
-	while (it != ite)
+	for (size_t i = 0; i < numbers.size(); i++)
 	{
-		std::cout << *it << std::endl;
-		++it;
+		std::cout << numbers[i] << " " ;
 	}
 
-	std::stack<int> s(mstack);
+	std::cout << std::endl;
+}
 
-	std::cout << "empty: " << mstack.empty() << std::endl;
+
+int main(int ac, char **av)
+{
+	if (ac < 2)
+	{
+		std::cerr << "Error" << std::endl;
+		return 1;
+	}
+
+	std::vector<int> input;
+	for (int i = 1; i < ac; ++i)
+	{
+		if (!isPositiveInteger(av[i]))
+		{
+			std::cerr << "Error" << std::endl;
+			return 1;
+		}
+		input.push_back(std::atoi(av[i]));
+	}
+
+	PmergeMe sorter(input);
+	sorter.sortWithVector();
+	sorter.sortWithList();
+
+	printNumbers("Before: ", sorter.getInput());
+	printNumbers("After:  ", sorter.getSortedVector());
+	std::cout << "Time to process a range of " << input.size()
+			  << " elements with std::vector : "
+			  << sorter.getTimeVector() << " us" << std::endl;
+	std::cout << "Time to process a range of " << input.size()
+			  << " elements with std::list : "
+			  << sorter.getTimeList() << " us" << std::endl;
 
 	return 0;
-
-    
 }
+

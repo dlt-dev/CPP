@@ -6,11 +6,11 @@
 #    By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/15 17:59:29 by jdelattr          #+#    #+#              #
-#    Updated: 2026/08/16 19:04:11 by jdelattr         ###   ########.fr        #
+#    Updated: 2026/08/27 12:01:01 by jdelattr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Span
+NAME = RPN
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
@@ -18,7 +18,7 @@ SRC_DIR = ./src/
 OBJ_DIR = ./objects/
 INC_DIR = ./include/
 
-SRC_FILES = Span.cpp main.cpp
+SRC_FILES = RPN.cpp main.cpp
 
 OBJ = $(addprefix $(OBJ_DIR), $(SRC_FILES:.cpp=.o))
 

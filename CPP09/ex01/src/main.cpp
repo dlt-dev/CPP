@@ -6,77 +6,38 @@
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/16 17:09:44 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/08/19 16:50:28 by jdelattr         ###   ########.fr       */
+/*   Updated: 2026/08/27 16:58:47 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Span.hpp"
+#include "RPN.hpp"
 
 
 #include <iostream>
 #include <string>
 
 
-int main()
+int main(int ac, char**av)
 {
+	if (ac != 2)
+	{
+		std::cerr << "Wrong argument value : Try : [./RPN <an inverted Polish mathematical expression>]" << std::endl;
+		return 1;
+	}
 
-	// test 42
-	
-	Span sp = Span(5);
-	sp.addNumber(6);
-	sp.addNumber(3);
-	sp.addNumber(17);
-	sp.addNumber(9);
-	sp.addNumber(11);
-	std::cout << sp.shortestSpan() << std::endl;
-	std::cout << sp.longestSpan() << std::endl;
+	RPN rpn(av[1]);
 
-	// autrs tests
-
-	// Test 2: depssement de caopacite
 	try
 	{
-		sp.addNumber(42);
+		int result = rpn.calculate();
+		std::cout << result << std::endl;
 	}
 	catch (std::exception& e)
 	{
-		std::cout << "Caught: " << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
+		return 1;
 	}
 
-	// Test 3: pas assez de nombres pour un span
-	try
-	{
-		Span empty(3);
-		empty.addNumber(1);
-		empty.shortestSpan();
-	}
-	catch (std::exception& e)
-	{
-		std::cout << "Caught: " << e.what() << std::endl;
-	}
-
-	// Test 4: remplissage via addRange
-	
-	std::vector<int> data;
-	for (int i = 0; i < 10000; i++)
-		data.push_back(i);
-
-	Span bigSpan(10000);
-	bigSpan.addRange(data.begin(), data.end());
-
-	std::cout << "Big span shortest: " << bigSpan.shortestSpan() << std::endl;
-	std::cout << "Big span longest:  " << bigSpan.longestSpan() << std::endl;
-
-	// Test 5: depasse capacite
-	try
-	{
-		Span tooSmall(5);
-		tooSmall.addRange(data.begin(), data.end());
-	}
-	catch (std::exception& e)
-	{
-		std::cout << "Caught: " << e.what() << std::endl;
-	}
 
 	return 0;
 }

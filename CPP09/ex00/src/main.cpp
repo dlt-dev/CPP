@@ -6,7 +6,7 @@
 /*   By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/15 17:58:18 by jdelattr          #+#    #+#             */
-/*   Updated: 2026/08/25 15:00:47 by jdelattr         ###   ########.fr       */
+/*   Updated: 2026/08/27 16:00:54 by jdelattr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ enum ValueStatus
     VALUE_TOO_LARGE
 };
 
-int isValidValue(const std::string& value, float& outValue)
+static int isValidValue(const std::string& value, float& outValue)
 {
     std::istringstream valueStr(value);
 
@@ -51,7 +51,7 @@ int isValidValue(const std::string& value, float& outValue)
     return GOOD_VALUE;
 }
 
-bool isValidDate(const std::string& date)
+static bool isValidDate(const std::string& date)
 {
     if (date.length() != 10)
         return false;

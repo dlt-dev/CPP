@@ -6,11 +6,11 @@
 #    By: jdelattr <jdelattr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/15 18:05:04 by jdelattr          #+#    #+#              #
-#    Updated: 2026/08/16 19:08:49 by jdelattr         ###   ########.fr        #
+#    Updated: 2026/08/27 17:27:46 by jdelattr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = MutatedAbomination
+NAME = PmergeMe
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
@@ -18,7 +18,7 @@ SRC_DIR = ./src/
 OBJ_DIR = ./objects/
 INC_DIR = ./include/
 
-SRC_FILES = main.cpp
+SRC_FILES = PmergeMe.cpp main.cpp
 
 OBJ = $(addprefix $(OBJ_DIR), $(SRC_FILES:.cpp=.o))
 
